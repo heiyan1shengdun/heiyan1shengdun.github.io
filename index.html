@@ -381,49 +381,7 @@
 	<!-- 齿轮加载 -->
 	<script>
    //ajax获取zcjun.com数据
-  $.ajax({
-  	url:"data/articleLists.json",
-  	type:"get",
-  	async: true,
-  	beforeSend: function (){
-  		$("#loading").show()
-  	}
-  }).then(res=>{
-  	let jsonObj=JSON.parse(res)
-  	let data = jsonObj.data
-  	$("#loading").hide()
-  	for(let [key,article] of data.entries()){		
-  	//判断一页最多7篇文章
-  	if(key<8){
-  		$(".articles").append(`
-  				<li><article>
-						<div class="indexwen" style>
-							<div class="page-header">
-								<h2 title="文章标题"><a href="details.html" style="white-space: nowrap;text-overflow:ellipsis;overflow: hidden;maxWidth =840px;display:block;">${article.title}</a></h2>
-							</div>
-							<div class="col-xs-6 col-md-3">
-								<a href="details.html" class="thumbnail">
-									<img src="img/random/tb${key+1}.jpg" alt="...">
-								</a>
-							</div>
-							<span>文章摘要-这是第一款适用于自媒体、极客的博客主题 它提供多样化的文章分类样式，内置了许多个性化的功能，能够满足您的各种需求。 特色 适用所有设备。文章摘要-这是第一款适用于自媒体、极客的博客主题 它提供多样化的文章分类样式，内置了许多个性化的功能，能够满足您的各种需求。 特色 适用所有设备。</span>
-							<p>
-								<em class="glyphicon glyphicon-user"></em>
-								作者：${article.nickname} 
-								<em class="glyphicon glyphicon-time"></em>
-								时间：${article.date}
-								<em class="glyphicon glyphicon-tasks"></em>
-								心情日志
-								<em class="glyphicon glyphicon-eye-open"></em>
-								${article.views}人围观
-							</p>
-							<i class="dv"></i>
-						</div>
-					</article></li>
-  		`)
-  	}
-  	}
-  },err=>console.log(err))
+ <!-- -->
 
 
 		
